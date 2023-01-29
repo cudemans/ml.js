@@ -1,0 +1,27 @@
+{
+  "name": "ml.js",
+  "version": "1.0.0",
+  "description": "A library to implement basic machine learning in the browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cudemans/mljs.git"
+  },
+  "keywords": [
+    "machine",
+    "learning",
+    "javascript"
+  ],
+  "author": "Chris Udemans",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cudemans/mljs/issues"
+  },
+  "homepage": "https://github.com/cudemans/mljs#readme",
+  "dependencies": {
+    "mathjs": "^11.5.0"
+  }
+}
