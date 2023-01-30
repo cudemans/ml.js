@@ -1,5 +1,5 @@
 {
-  "name": "ml.js",
+  "name": "@cudemans/ml.js",
   "version": "0.1.0",
   "description": "A library to implement basic machine learning in the browser",
   "main": "src/index.js",
