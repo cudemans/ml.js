@@ -18,17 +18,16 @@ class LinearRegression {
     this.bias = 0;
 
     for (let i = 0; i < this.numIters; i++) {
-      let yPred = math.dot(X, this.weights) + this.bias;
-
-      let yPredArray = Array.isArray(yPred)
-        ? math.dot(X, this.weights) + this.bias
-        : [math.dot(X, this.weights) + this.bias];
+      let yPred =
+        this.numFeatures > 1
+          ? math.dotM(X, this.weights).map((d) => d + this.bias)
+          : X.map((d) => d * this.weights).map((d) => d + this.bias);
 
       let dw =
         (1 / this.numSamples) *
         math.dot(
-          math.transpose(X),
-          yPredArray.map((d, i) => d - y[i])
+          X,
+          yPred.map((d, i) => d - y[i])
         );
 
       let db =
@@ -41,7 +40,9 @@ class LinearRegression {
   }
 
   predict(X_test) {
-    return math.dot(X_test, this.weights) + this.bias;
+    return this.numFeatures > 1
+      ? math.dot(X_test, this.weights) + this.bias
+      : X_test.map((d) => d * this.weights).map((d) => d + this.bias);
   }
 
   score(y_pred, y_test) {
