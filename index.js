@@ -11,7 +11,9 @@ class LinearRegression {
   }
 
   fit(X, y) {
-    this.numSamples, (this.numFeatures = X.length), X[0].length;
+    this.numSamples = X.length;
+    this.numFeatures = X[0].length;
+
     this.weights = new Array(this.numFeatures).fill(0);
     this.bias = 0;
 
