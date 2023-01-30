@@ -1,6 +1,6 @@
-const math = require("mathjs");
+import { dot } from "mathjs";
 
-class LinearRegression {
+export default class LinearRegression {
   constructor(learningRate = 0.001, numIters = 1000) {
     this.learningRate = learningRate;
     this.numIters = numIters;
@@ -20,12 +20,12 @@ class LinearRegression {
     for (let i = 0; i < this.numIters; i++) {
       let yPred =
         this.numFeatures > 1
-          ? math.dot(X, this.weights).map((d) => d + this.bias)
+          ? dot(X, this.weights).map((d) => d + this.bias)
           : X.map((d) => d * this.weights).map((d) => d + this.bias);
 
       let dw =
         (1 / this.numSamples) *
-        math.dot(
+        dot(
           X,
           yPred.map((d, i) => d - y[i])
         );
@@ -41,7 +41,7 @@ class LinearRegression {
 
   predict(X_test) {
     return this.numFeatures > 1
-      ? math.dot(X_test, this.weights) + this.bias
+      ? dot(X_test, this.weights) + this.bias
       : X_test.map((d) => d * this.weights).map((d) => d + this.bias);
   }
 
@@ -50,5 +50,3 @@ class LinearRegression {
     return mapped.reduce((a, b) => a + b, 0) / mapped.length;
   }
 }
-
-module.exports = { LinearRegression };
