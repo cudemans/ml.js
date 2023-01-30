@@ -14,7 +14,10 @@ To install:
 
 # Functionality
 
-Functionality is based on the `sklearn` model.
+Functionality is based on the `sklearn` model, and includes:
+
+1. `LinearRegression`
+2. `LogisticRegression`
 
 ```
 const linReg = new LinearRegression()
