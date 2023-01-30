@@ -20,7 +20,7 @@ class LinearRegression {
     for (let i = 0; i < this.numIters; i++) {
       let yPred =
         this.numFeatures > 1
-          ? math.dotM(X, this.weights).map((d) => d + this.bias)
+          ? math.dot(X, this.weights).map((d) => d + this.bias)
           : X.map((d) => d * this.weights).map((d) => d + this.bias);
 
       let dw =
