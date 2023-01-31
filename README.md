@@ -2,7 +2,7 @@
 
 A small library for machine learning in JavaScript.
 
-Currently a work in progress
+Currently a work in progress - logistic regression not tested
 
 # Installation
 

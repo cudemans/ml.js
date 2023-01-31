@@ -1,3 +1,6 @@
+// Inspired by Patrick's Loeber's YouTube tutorial on
+// building ML algorithms in Python
+
 import { dot } from "mathjs";
 
 export default class BaseRegression {
