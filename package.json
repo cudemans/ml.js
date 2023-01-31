@@ -1,6 +1,6 @@
 {
   "name": "@cudemans/ml.js",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A library to implement basic machine learning in the browser",
   "main": "src/index.js",
   "type": "module",
