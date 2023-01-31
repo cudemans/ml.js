@@ -1,6 +1,6 @@
 import { dot } from "mathjs";
 
-export default class LinearRegression {
+export default class BaseRegression {
   constructor(learningRate = 0.001, numIters = 1000) {
     this.learningRate = learningRate;
     this.numIters = numIters;
@@ -18,10 +18,12 @@ export default class LinearRegression {
     this.bias = 0;
 
     for (let i = 0; i < this.numIters; i++) {
-      let yPred =
-        this.numFeatures > 1
-          ? dot(X, this.weights).map((d) => d + this.bias)
-          : X.map((d) => d * this.weights).map((d) => d + this.bias);
+      let yPred = this._approximation(
+        this.numFeatures,
+        X,
+        this.weights,
+        this.bias
+      );
 
       let dw =
         (1 / this.numSamples) *
@@ -38,11 +40,8 @@ export default class LinearRegression {
       this.bias -= this.learningRate * db;
     }
   }
-
-  predict(X_test) {
-    return this.numFeatures > 1
-      ? dot(X_test, this.weights) + this.bias
-      : X_test.map((d) => d * this.weights).map((d) => d + this.bias);
+  _approximation(features, X, weights, bias) {
+    return;
   }
 
   score(y_pred, y_test) {

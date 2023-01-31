@@ -16,8 +16,18 @@ To install:
 
 Functionality is based on the `sklearn` model, and includes:
 
+### Linear models
+
 1. `LinearRegression`
 2. `LogisticRegression`
+
+### Evaluation metrics
+
+1. Accuracy
+2. Mean absolute error
+3. Mean squared error
+4. Root mean squared error
+5. R squared
 
 ```
 const linReg = new LinearRegression()
