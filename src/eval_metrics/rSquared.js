@@ -21,5 +21,5 @@ export default function R2(yTrue, yPred) {
 
   const TSS = yTrue.map((d) => (d - yTrueMean) ** 2).reduce((a, b) => a + b, 0);
 
-  return SSR / TSS;
+  return 1 - SSR / TSS;
 }
