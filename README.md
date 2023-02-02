@@ -19,7 +19,7 @@ Functionality is based on the `sklearn` model, and includes:
 ### Linear models
 
 1. `LinearRegression`
-2. `LogisticRegression`
+2. `LogisticRegression` (binary)
 
 ### Evaluation metrics
 
