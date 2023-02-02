@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/cudemans/mljs#readme",
   "dependencies": {
-    "mathjs": "^11.5.0"
+    "mathjs": "^11.5.0",
+    "summarystats": "^0.2.1"
   }
 }

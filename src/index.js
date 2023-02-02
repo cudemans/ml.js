@@ -17,3 +17,10 @@ export {
   default as RMSE,
   default as rootMeanSquaredError,
 } from "./eval_metrics/root_mean_squared_error.js";
+export {
+  default as classPerf,
+  default as classificationPerformance,
+} from "./eval_metrics/classPerf.js";
+
+// Utilities
+export { default as argSort } from "./utils/argsort.js";
