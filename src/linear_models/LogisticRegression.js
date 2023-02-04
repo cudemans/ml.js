@@ -2,8 +2,10 @@ import { dot, exp } from "mathjs";
 import BaseRegression from "./BaseRegression.js";
 
 export default class LogisticRegression extends BaseRegression {
-  constructor(learningRate, numIters) {
+  constructor(learningRate, numIters, classificationThreshold = 0.5) {
     super(learningRate, numIters);
+    this.classificationThreshold = classificationThreshold;
+    this.probas = [];
   }
 
   _approximation(features, X, weights, bias) {
@@ -27,7 +29,7 @@ export default class LogisticRegression extends BaseRegression {
       this.bias
     );
     return predictions.map((d) => {
-      return d > 0.5 ? 1 : 0;
+      return d > this.classificationThreshold ? 1 : 0;
     });
   }
 
