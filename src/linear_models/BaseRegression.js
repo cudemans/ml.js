@@ -2,9 +2,11 @@
 // building ML algorithms in Python
 
 import { dot } from "mathjs";
+import BaseAlgorithm from "../base/BaseAlgorithm.js";
 
-export default class BaseRegression {
+export default class BaseRegression extends BaseAlgorithm {
   constructor(learningRate = 0.001, numIters = 1000) {
+    super();
     this.learningRate = learningRate;
     this.numIters = numIters;
     this.weights = null;
@@ -47,8 +49,11 @@ export default class BaseRegression {
     return;
   }
 
-  score(y_pred, y_test) {
-    const mapped = y_pred.map((d, i) => d == y_test[i]);
-    return mapped.reduce((a, b) => a + b, 0) / mapped.length;
+  getWeights() {
+    return this.weights;
+  }
+
+  getBias() {
+    return this.bias;
   }
 }
