@@ -21,7 +21,7 @@ export default class NaiveBayes {
         })
         .filter((el) => el);
 
-      const X_c = mask.map((d, i) => {
+      const X_c = X.map((d, i) => {
         if (mask.contains(i)) {
           return d;
         }
