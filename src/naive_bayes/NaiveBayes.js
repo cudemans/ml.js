@@ -4,7 +4,7 @@ export default class NaiveBayes {
   constructor(X, y) {
     this.nSamples = X.length;
     this.nFeatures = X[0].length;
-    this.nClasses = [...new Set(y)].length;
+    this.nClasses = [...new Set(y)];
     this.eps = 1e-6;
     this.classesMean = {};
     this.classesVar = {};
