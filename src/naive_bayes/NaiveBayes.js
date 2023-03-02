@@ -50,10 +50,23 @@ export default class NaiveBayes {
 
   pdf(X, mean, sigma) {
     // console.log(sigma);
+
     const c =
-      (-this.nFeatures / 2) * Math.log(2 * Math.PI) -
-      0.5 * Math.log(sigma + this.eps);
+      this.nFeatures > 2
+        ? sigma.map((d) => {
+            return (
+              (-this.nFeatures / 2) * Math.log(2 * Math.PI) -
+              0.5 * Math.log(d + this.eps)
+            );
+          })
+        : (-this.nFeatures / 2) * Math.log(2 * Math.PI) -
+          0.5 * Math.log(sigma + this.eps);
+    // const c =
+    //   (-this.nFeatures / 2) * Math.log(2 * Math.PI) -
+    //   0.5 * Math.log(sigma + this.eps);
+
     // const probs = 0.5 * (Math.pow(x - mean, 2) / sigma + this.eps + 1);
+    // const probs =
 
     // console.log(
     //   (-this.nFeatures / 2) * Math.log(2 * Math.PI) - 0.5 * Math.log(this.eps)
