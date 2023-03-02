@@ -4,7 +4,7 @@ export default function _matrixArrayIterator(arr, axis, statFn) {
   const stats = [];
 
   if (cols == undefined) {
-    return arr.reduce((a, b) => a + b, 0) / arr.length;
+    return statFn(arr);
   }
 
   if (axis === 0 || !axis) {
