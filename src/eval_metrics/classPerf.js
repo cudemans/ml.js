@@ -1,5 +1,7 @@
+import { _checkLength } from "../utils/errors.js";
+
 /**
- * Evaluate the performance of a classifier
+ * Evaluate the performance of a binary classifier
  * @param yTrue {Array} - Array of true values
  * @param yPred {Array}  - Array of predicted values
  * @returns {Object} Object containing number of true positives (TP), false positives (FP),
@@ -7,6 +9,8 @@
  **/
 
 export default function classPerf(yTrue, yPred) {
+  // Error handling
+  _checkLength(yTrue, yPred);
   let [TP, FP, TN, FN] = Array(4).fill(0);
 
   yTrue.forEach((d, i) => {
